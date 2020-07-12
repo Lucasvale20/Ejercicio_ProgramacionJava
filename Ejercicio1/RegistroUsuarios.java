@@ -46,7 +46,7 @@ public class RegistroUsuarios extends JFrame {
 	private JFormattedTextField CampoCedulas;
 	private JButton BotonFoto, botonAyuda1, botonAyuda2, botonAyuda3 , botonSalir;
 	private JLabel EtiquetaNombre, EtiquetaApellido, EtiquetaCedula, EtiquetaIcono, EtiquetaLogo;
-	private JTabbedPane ContenedorPestaña;
+	private JTabbedPane ContenedorPestaÃ±a;
 	private MaskFormatter Filtro;
 	
 	public RegistroUsuarios() throws ParseException {
@@ -71,18 +71,18 @@ public class RegistroUsuarios extends JFrame {
 		/*
 		 * 
 		 * Metodo encagado de crear el contenedor que contiene los componetes de mi
-		 * interfaz grafica con las pestañas.
+		 * interfaz grafica con las pestaÃ±as.
 		 * 
 		 */
 
-		ContenedorPestaña = new JTabbedPane(JTabbedPane.TOP);
-		ContenedorPestaña.setBounds(55, 192, 426, 257);
-		PanelFondo.add(ContenedorPestaña);
+		ContenedorPestaÃ±a = new JTabbedPane(JTabbedPane.TOP);
+		ContenedorPestaÃ±a.setBounds(55, 192, 426, 257);
+		PanelFondo.add(ContenedorPestaÃ±a);
 	
 
-		Panel Pestaña1 = new Panel();
-		ContenedorPestaña.addTab("Dato de Usuario", null, Pestaña1, null);
-		Pestaña1.setLayout(null);
+		Panel PestaÃ±a1 = new Panel();
+		ContenedorPestaÃ±a.addTab("Dato de Usuario", null, PestaÃ±a1, null);
+		PestaÃ±a1.setLayout(null);
 
 		// Boton encargado de cargar cualquier imagen gif y jpg del Sistema Operatio.
 
@@ -90,12 +90,12 @@ public class RegistroUsuarios extends JFrame {
 		BotonFoto.setBounds(205, 0, 120, 84);
 		BotonFoto.addKeyListener(EventoTeclado);
 		BotonFoto.addActionListener(EventoClick);
-		Pestaña1.add(BotonFoto);
+		PestaÃ±a1.add(BotonFoto);
 
 		
 		EtiquetaNombre = new JLabel("Nombre del Estudiante");
 		EtiquetaNombre.setBounds(10, 101, 132, 14);
-		Pestaña1.add(EtiquetaNombre);
+		PestaÃ±a1.add(EtiquetaNombre);
 
 		
 		CampoNombres = new JTextField();
@@ -104,7 +104,7 @@ public class RegistroUsuarios extends JFrame {
 		CampoNombres.addKeyListener(EventoTeclado);
 		CampoNombres.addKeyListener(EventoTipoLetra);
 		CampoNombres.setBounds(152, 95, 230, 26);
-		Pestaña1.add(CampoNombres);
+		PestaÃ±a1.add(CampoNombres);
 		
 
 	    /*
@@ -120,7 +120,7 @@ public class RegistroUsuarios extends JFrame {
 		
 		EtiquetaApellido = new JLabel("Apellido del Estudiante");
 		EtiquetaApellido.setBounds(10, 138, 132, 14);
-		Pestaña1.add(EtiquetaApellido);
+		PestaÃ±a1.add(EtiquetaApellido);
 
 		
 		CampoApellidos = new JTextField();
@@ -129,7 +129,7 @@ public class RegistroUsuarios extends JFrame {
 		CampoApellidos.addKeyListener(EventoTeclado);
 		CampoApellidos.addKeyListener(EventoTipoLetra);
 		CampoApellidos.setBounds(152, 132, 230, 26);
-		Pestaña1.add(CampoApellidos);
+		PestaÃ±a1.add(CampoApellidos);
 
 		
 		TextPrompt placeholder2 = new TextPrompt("Ingrese su Apellido", CampoApellidos);
@@ -137,10 +137,10 @@ public class RegistroUsuarios extends JFrame {
 		
 		EtiquetaCedula = new JLabel("Cedula del Estudiante");
 		EtiquetaCedula.setBounds(10, 175, 145, 14);
-		Pestaña1.add(EtiquetaCedula);
+		PestaÃ±a1.add(EtiquetaCedula);
 		
 		
-	    Filtro = new MaskFormatter(" # - ### - ### - #");
+	        Filtro = new MaskFormatter(" # - ### - ### - #");
 		Filtro.setPlaceholderCharacter('_');
 		
 		
@@ -149,7 +149,7 @@ public class RegistroUsuarios extends JFrame {
 		CampoCedulas.setFont(new Font("Arial", Font.BOLD, 12));
 		CampoCedulas.addKeyListener(EventoTeclado);
 		CampoCedulas.setBounds(152, 169, 102, 26);
-		Pestaña1.add(CampoCedulas);
+		PestaÃ±a1.add(CampoCedulas);
 
 		/*
 		 * Estos botones de ayuda son encargado de mostrarle al usuario un mensaje De
@@ -161,33 +161,33 @@ public class RegistroUsuarios extends JFrame {
 		botonAyuda1 = new JButton(new ImageIcon("Imagenes/Pregunta.png"));
 		botonAyuda1.setBounds(392, 95, 29, 26);
 		botonAyuda1.setVisible(false);
-		Pestaña1.add(botonAyuda1);
+		PestaÃ±a1.add(botonAyuda1);
 
 		
 		botonAyuda2 = new JButton(new ImageIcon("Imagenes/Pregunta.png"));
 		botonAyuda2.setBounds(392, 131, 29, 26);
 		botonAyuda2.setVisible(false);
-		Pestaña1.add(botonAyuda2);
+		PestaÃ±a1.add(botonAyuda2);
 
 		
 		botonAyuda3 = new JButton(new ImageIcon("Imagenes/Pregunta.png"));
 		botonAyuda3.setBounds(264, 169, 29, 26);
 		botonAyuda3.setVisible(false);
-		Pestaña1.add(botonAyuda3);
+		PestaÃ±a1.add(botonAyuda3);
 
 		
-		Panel Pestaña2 = new Panel();
-		ContenedorPestaña.addTab("Nacionalidad", null, Pestaña2, null);
-		Pestaña2.setLayout(null);
+		Panel PestaÃ±a2 = new Panel();
+		ContenedorPestaÃ±a.addTab("Nacionalidad", null, PestaÃ±a2, null);
+		PestaÃ±a2.setLayout(null);
 
 		
 		EtiquetaLogo = new JLabel(new ImageIcon("Imagenes/Logo.png"));
 		EtiquetaLogo.setBounds(10, 11, 137, 110);
-		Pestaña2.add(EtiquetaLogo);
+		PestaÃ±a2.add(EtiquetaLogo);
 		
 		
-	    botonSalir = new JButton("X");
-	    botonSalir.setForeground(Color.BLACK);
+	        botonSalir = new JButton("X");
+	        botonSalir.setForeground(Color.BLACK);
 		botonSalir.setBounds(496, 11, 55, 23);
 		botonSalir.setBackground(new Color(237,237,234));
 		botonSalir.setBorderPainted(false);
@@ -242,8 +242,8 @@ public class RegistroUsuarios extends JFrame {
 	
 	/**
 	 * 
-	   			Este metodo se encarga de validar si el usuario
-	  			Ingreso numeros en ves de texto en los campos Nombre y Apellido.
+	     Este metodo se encarga de validar si el usuario
+	     Ingreso numeros en ves de texto en los campos Nombre y Apellido.
  	 * 
 	 */
 
