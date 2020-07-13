@@ -11,6 +11,7 @@ import javax.swing.JPanel;
 import javax.swing.border.Border;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
+import javax.swing.text.Caret;
 import javax.swing.text.InternationalFormatter;
 import javax.swing.text.MaskFormatter;
 import javax.swing.JButton;
@@ -25,6 +26,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JComboBox;
 import javax.swing.JFormattedTextField;
 import javax.swing.JRadioButton;
+import javax.swing.BorderFactory;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
 import javax.swing.JTabbedPane;
@@ -42,13 +44,19 @@ public class RegistroUsuarios extends JFrame {
 
 	private JPanel PanelFondo;
 	private static RegistroUsuarios frame;
-	private JTextField CampoNombres, CampoApellidos;
-	private JFormattedTextField CampoCedulas;
-	private JButton BotonFoto, botonAyuda1, botonAyuda2, botonAyuda3 , botonSalir;
+	private JFormattedTextField CampoNombres, CampoApellidos, CampoCedulas;
+	private JButton BotonFoto, botonAyuda1, botonAyuda2, botonAyuda3, botonSalir;
 	private JLabel EtiquetaNombre, EtiquetaApellido, EtiquetaCedula, EtiquetaIcono, EtiquetaLogo;
+<<<<<<< HEAD
 	private JTabbedPane ContenedorPestaÃ±a;
 	private MaskFormatter Filtro;
 	
+=======
+	private JTabbedPane ContenedorPestaña;
+	private MaskFormatter Filtro1, Filtro2, Filtro3;
+	private JPanel PanelApellido , PanelCedula;
+
+>>>>>>> e5fecd7... Version 0.2
 	public RegistroUsuarios() throws ParseException {
 
 		// metodo encargado de cambiarme el icono de mi aplicacion.
@@ -56,16 +64,15 @@ public class RegistroUsuarios extends JFrame {
 		setTitle("Interfaz de Registro de Alumnos");
 		setBounds(100, 100, 561, 460);
 		setUndecorated(true);
-		
-		
+
 		PanelFondo = new JPanel();
 		PanelFondo.setBorder(new TitledBorder(null, "", TitledBorder.TRAILING, TitledBorder.ABOVE_TOP, null, null));
 		setContentPane(PanelFondo);
 		PanelFondo.setLayout(null);
+		PanelFondo.setBackground(new Color(7, 105, 255));
 
-		
 		EtiquetaIcono = new JLabel(new ImageIcon("Imagenes/estudiante.png"));
-		EtiquetaIcono.setBounds(55, 71, 118, 93);
+		EtiquetaIcono.setBounds(44, 46, 118, 93);
 		PanelFondo.add(EtiquetaIcono);
 
 		/*
@@ -75,6 +82,7 @@ public class RegistroUsuarios extends JFrame {
 		 * 
 		 */
 
+<<<<<<< HEAD
 		ContenedorPestaÃ±a = new JTabbedPane(JTabbedPane.TOP);
 		ContenedorPestaÃ±a.setBounds(55, 192, 426, 257);
 		PanelFondo.add(ContenedorPestaÃ±a);
@@ -83,25 +91,66 @@ public class RegistroUsuarios extends JFrame {
 		Panel PestaÃ±a1 = new Panel();
 		ContenedorPestaÃ±a.addTab("Dato de Usuario", null, PestaÃ±a1, null);
 		PestaÃ±a1.setLayout(null);
+=======
+		ContenedorPestaña = new JTabbedPane(JTabbedPane.TOP);
+		ContenedorPestaña.setBounds(48, 166, 451, 283);
+		ContenedorPestaña.setBackground(Color.white);
+		PanelFondo.add(ContenedorPestaña);
+		
+
+		Panel Pestaña1 = new Panel();
+		ContenedorPestaña.addTab("Dato de Usuario", null, Pestaña1, null);
+		Pestaña1.setBackground(Color.white);
+		Pestaña1.setLayout(null);
+>>>>>>> e5fecd7... Version 0.2
 
 		// Boton encargado de cargar cualquier imagen gif y jpg del Sistema Operatio.
 
 		BotonFoto = new JButton(new ImageIcon("Imagenes/usuario.png"));
-		BotonFoto.setBounds(205, 0, 120, 84);
+		BotonFoto.setBounds(193, 0, 120, 84);
+		BotonFoto.setBackground(Color.white);
+		BotonFoto.setBorderPainted(false);
+		BotonFoto.setFocusPainted(false);
 		BotonFoto.addKeyListener(EventoTeclado);
 		BotonFoto.addActionListener(EventoClick);
+<<<<<<< HEAD
 		PestaÃ±a1.add(BotonFoto);
+=======
 
-		
+		PanelApellido = new JPanel();
+		PanelApellido.setBackground(Color.BLUE);
+		PanelApellido.setBounds(154, 187, 228, 2);
+		Pestaña1.add(PanelApellido);
+
+		PanelCedula = new JPanel();
+		PanelCedula.setBackground(Color.BLUE);
+		PanelCedula.setBounds(154, 240, 101, 2);
+		Pestaña1.add(PanelCedula);
+
+		JPanel PanelNombre = new JPanel();
+		PanelNombre.setBackground(Color.BLUE);
+		PanelNombre.setBounds(152, 139, 230, 2);
+		Pestaña1.add(PanelNombre);
+		Pestaña1.add(BotonFoto);
+>>>>>>> e5fecd7... Version 0.2
+
 		EtiquetaNombre = new JLabel("Nombre del Estudiante");
+<<<<<<< HEAD
 		EtiquetaNombre.setBounds(10, 101, 132, 14);
 		PestaÃ±a1.add(EtiquetaNombre);
+=======
+		EtiquetaNombre.setBounds(154, 102, 137, 14);
+		Pestaña1.add(EtiquetaNombre);
+>>>>>>> e5fecd7... Version 0.2
 
 		
-		CampoNombres = new JTextField();
+		Filtro1 = new MaskFormatter("?????????????????????????");
+		CampoNombres = new JFormattedTextField(Filtro1);
 		CampoNombres.setColumns(10);
 		CampoNombres.setFont(new Font("Arial", Font.BOLD, 12));
+		CampoNombres.setBorder(BorderFactory.createLineBorder(new Color(0, 0, 0, 0), 2));
 		CampoNombres.addKeyListener(EventoTeclado);
+<<<<<<< HEAD
 		CampoNombres.addKeyListener(EventoTipoLetra);
 		CampoNombres.setBounds(152, 95, 230, 26);
 		PestaÃ±a1.add(CampoNombres);
@@ -122,20 +171,35 @@ public class RegistroUsuarios extends JFrame {
 		EtiquetaApellido.setBounds(10, 138, 132, 14);
 		PestaÃ±a1.add(EtiquetaApellido);
 
+=======
+		CampoNombres.setBounds(152, 120, 230, 19);
+		Pestaña1.add(CampoNombres);
+
 		
-		CampoApellidos = new JTextField();
+		EtiquetaApellido = new JLabel("Apellido del Estudiante");
+		EtiquetaApellido.setBounds(154, 148, 132, 14);
+		Pestaña1.add(EtiquetaApellido);
+>>>>>>> e5fecd7... Version 0.2
+		
+		
+		Filtro2 = new MaskFormatter("?????????????");
+		CampoApellidos = new JFormattedTextField(Filtro2);
 		CampoApellidos.setColumns(10);
 		CampoApellidos.setFont(new Font("Arial", Font.BOLD, 12));
+		CampoApellidos.setBorder(BorderFactory.createLineBorder(new Color(0, 0, 0, 0), 2));
 		CampoApellidos.addKeyListener(EventoTeclado);
+<<<<<<< HEAD
 		CampoApellidos.addKeyListener(EventoTipoLetra);
 		CampoApellidos.setBounds(152, 132, 230, 26);
 		PestaÃ±a1.add(CampoApellidos);
-
-		
-		TextPrompt placeholder2 = new TextPrompt("Ingrese su Apellido", CampoApellidos);
+=======
+		CampoApellidos.setBounds(154, 167, 230, 19);
+		Pestaña1.add(CampoApellidos);
+>>>>>>> e5fecd7... Version 0.2
 
 		
 		EtiquetaCedula = new JLabel("Cedula del Estudiante");
+<<<<<<< HEAD
 		EtiquetaCedula.setBounds(10, 175, 145, 14);
 		PestaÃ±a1.add(EtiquetaCedula);
 		
@@ -145,12 +209,28 @@ public class RegistroUsuarios extends JFrame {
 		
 		
 		CampoCedulas = new JFormattedTextField(Filtro);
+=======
+		EtiquetaCedula.setBounds(154, 196, 145, 14);
+		Pestaña1.add(EtiquetaCedula);
+		
+		
+		Filtro3 = new MaskFormatter(" # - ### - ### - #");
+		Filtro3.setPlaceholderCharacter('_');
+		CampoCedulas = new JFormattedTextField(Filtro3);
+>>>>>>> e5fecd7... Version 0.2
 		CampoCedulas.setColumns(10);
 		CampoCedulas.setFont(new Font("Arial", Font.BOLD, 12));
+		CampoCedulas.setBorder(BorderFactory.createLineBorder(new Color(0, 0, 0, 0), 2));
 		CampoCedulas.addKeyListener(EventoTeclado);
+<<<<<<< HEAD
 		CampoCedulas.setBounds(152, 169, 102, 26);
 		PestaÃ±a1.add(CampoCedulas);
 
+=======
+		CampoCedulas.setBounds(153, 214, 102, 26);
+		Pestaña1.add(CampoCedulas);
+		
+>>>>>>> e5fecd7... Version 0.2
 		/*
 		 * Estos botones de ayuda son encargado de mostrarle al usuario un mensaje De
 		 * debe de rellena un JTextField cuando estan vacios por defecto estan Por
@@ -158,22 +238,34 @@ public class RegistroUsuarios extends JFrame {
 		 */
 		
 		
+
 		botonAyuda1 = new JButton(new ImageIcon("Imagenes/Pregunta.png"));
-		botonAyuda1.setBounds(392, 95, 29, 26);
+		botonAyuda1.setBackground(Color.WHITE);
+		botonAyuda1.setBounds(392, 115, 29, 26);
+		botonAyuda1.setBorder(BorderFactory.createLineBorder(new Color(0, 0, 0, 0), 2));
 		botonAyuda1.setVisible(false);
 		PestaÃ±a1.add(botonAyuda1);
 
 		
 		botonAyuda2 = new JButton(new ImageIcon("Imagenes/Pregunta.png"));
-		botonAyuda2.setBounds(392, 131, 29, 26);
+		botonAyuda2.setBackground(Color.WHITE);
+		botonAyuda2.setBounds(392, 167, 29, 26);
+		botonAyuda2.setBorder(BorderFactory.createLineBorder(new Color(0, 0, 0, 0), 2));
 		botonAyuda2.setVisible(false);
 		PestaÃ±a1.add(botonAyuda2);
 
 		
 		botonAyuda3 = new JButton(new ImageIcon("Imagenes/Pregunta.png"));
-		botonAyuda3.setBounds(264, 169, 29, 26);
+		botonAyuda3.setBackground(Color.WHITE);
+		botonAyuda3.setBounds(265, 221, 29, 26);
+		botonAyuda3.setBorder(BorderFactory.createLineBorder(new Color(0, 0, 0, 0), 2));
 		botonAyuda3.setVisible(false);
+<<<<<<< HEAD
 		PestaÃ±a1.add(botonAyuda3);
+=======
+		Pestaña1.add(botonAyuda3);
+		Pestaña1.setBackground(Color.white);
+>>>>>>> e5fecd7... Version 0.2
 
 		
 		Panel PestaÃ±a2 = new Panel();
@@ -183,62 +275,71 @@ public class RegistroUsuarios extends JFrame {
 		
 		EtiquetaLogo = new JLabel(new ImageIcon("Imagenes/Logo.png"));
 		EtiquetaLogo.setBounds(10, 11, 137, 110);
+<<<<<<< HEAD
 		PestaÃ±a2.add(EtiquetaLogo);
 		
 		
 	        botonSalir = new JButton("X");
 	        botonSalir.setForeground(Color.BLACK);
+=======
+		Pestaña2.add(EtiquetaLogo);
+
+		
+		botonSalir = new JButton("X");
+		botonSalir.setForeground(Color.WHITE);
+>>>>>>> e5fecd7... Version 0.2
 		botonSalir.setBounds(496, 11, 55, 23);
-		botonSalir.setBackground(new Color(237,237,234));
+		botonSalir.setBackground(new Color(7, 105, 255));
 		botonSalir.setBorderPainted(false);
 		botonSalir.setFocusPainted(false);
 		PanelFondo.add(botonSalir);
-		
+
 	}
 
 	KeyAdapter EventoTeclado = new KeyAdapter() {
 
 		@Override
 		public void keyPressed(java.awt.event.KeyEvent e) {
-			
-			if(CampoNombres.getText().isEmpty()) {
-				
+
+			if (CampoNombres.isEditValid() == false) {
+
 				CampoNombres.setBackground(Color.yellow);
 				botonAyuda1.setVisible(true);
 			}
-			
-			if(!CampoNombres.getText().isEmpty()) {
-				
+
+			if (!CampoNombres.isEditValid() == false) {
+
 				CampoNombres.setBackground(Color.white);
 				botonAyuda1.setVisible(false);
 			}
-			
-			if(CampoApellidos.getText().isEmpty()) {
-				
+
+			if (CampoApellidos.isEditValid() == false) {
+
 				CampoApellidos.setBackground(Color.yellow);
 				botonAyuda2.setVisible(true);
 			}
-			
-			if(!CampoApellidos.getText().isEmpty()) {
-				
+
+			if (!CampoApellidos.isEditValid() == false) {
+
 				CampoApellidos.setBackground(Color.white);
 				botonAyuda2.setVisible(false);
 			}
-			
-			if(CampoCedulas.isEditValid() == false) {
-				
+
+			if (CampoCedulas.isEditValid() == false) {
+
 				CampoCedulas.setBackground(Color.yellow);
 				botonAyuda3.setVisible(true);
 			}
-			
+
 			else {
-				
+
 				CampoCedulas.setBackground(Color.white);
 				botonAyuda3.setVisible(false);
 			}
 		};
 	};
 
+<<<<<<< HEAD
 	
 	/**
 	 * 
@@ -261,6 +362,8 @@ public class RegistroUsuarios extends JFrame {
 	
 	
 	
+=======
+>>>>>>> e5fecd7... Version 0.2
 	ActionListener EventoClick = new ActionListener() {
 
 		@Override
@@ -268,6 +371,7 @@ public class RegistroUsuarios extends JFrame {
 
 		}
 	};
+	
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
